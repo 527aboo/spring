@@ -23,18 +23,35 @@
   </dependencies>
   </dependencyManagement>
 
-    <!-- ② -->
-  <dependencies>
+ <dependencies>
+    <!-- ①Spring Frameworkの依存モジュールへの依存関係を解決 -->
     <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <scope>provided</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.taglibs</groupId>
-        <artifactId>taglibs-standard-jstlel</artifactId>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
     </dependency>
 
+    <!-- ②Hibernate Validatorを使用する -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+    <!-- ③thymeleaf-spring4ライブラリを指定 -->
+    <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf-spring4</artifactId>
+    </dependency>
+
+    <!-- ④ログ出力の依存ライブラリ -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
