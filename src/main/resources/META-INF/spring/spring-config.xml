@@ -42,7 +42,7 @@
 	<!-- POMで取得したjarのファイルと同じバージョンhibernate「X」にする -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="spring.entity" />
+		<property name="packagesToScan" value="spring.app.entity" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
@@ -63,14 +63,14 @@
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="spring.entity" />
+		<property name="packagesToScan" value="spring.app.entity" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-	<jpa:repositories base-package="spring.service" />
+	<jpa:repositories base-package="spring.app.logic" />
 	-->
 	<bean id="java8TimeDialect" class="org.thymeleaf.extras.java8time.dialect.Java8TimeDialect" />
 
